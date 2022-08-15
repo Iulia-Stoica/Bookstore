@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Book added successfully!</h3>
+<div th:object="${book}">
+    <p th:text=="'Title: ' + *{title}"></p>
+    <p th:text=="'Pages: ' + *{pages}"></p>
+    <p th:text=="'Publisher: ' + *{publisher}"></p>
+</div>
+</body>
+</html>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -36,6 +37,13 @@ public class UserService {
         return null;
     }
 
+    public User findById(User user) throws Exception {
+        User foundUser = userRepository.findById(user.getId());
 
-
+        if (foundUser == null)
+        {
+            throw new Exception("User not found");
+        }
+        return foundUser;
+    }
 }
